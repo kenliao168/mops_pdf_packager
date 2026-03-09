@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Downloaded reports (output)
+*_NotebookLM_Pack/
+*_NotebookLM上傳文件/
+*_ESG_Reports/
+
+# PyInstaller
+*.spec
+*.exe
+
+# Test/debug artifacts
+test_*/
+debug*
+*.png
+*.pdf
