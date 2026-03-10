@@ -120,7 +120,7 @@ class MOPSApp:
 
         tk.Label(
             info_frame,
-            text="下載內容: 年報 / 財報 / 關係企業三書表 / 法說會簡報 / ESG 永續報告書",
+            text="下載內容: 年報 / 財報 / 關係企業三書表 / 法說會簡報 / ESG永續報告書 / 公開說明書",
             font=("Microsoft JhengHei", 9),
             fg="#7f8c8d", bg="#f5f5f5"
         ).pack(anchor="w")

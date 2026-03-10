@@ -11,6 +11,7 @@
 | 關係企業三書表 | doc.twse.com.tw | 最近 5 年 |
 | 法說會簡報 | mopsov.twse.com.tw | 最近 5 場 |
 | ESG 永續報告書 | esggenplus.twse.com.tw | 最近 3 年 |
+| 公開說明書 | doc.twse.com.tw | 最近 1 期 |
 
 ## 使用方式
 
@@ -65,6 +66,7 @@ mops_pdf_packager/
     │   ├── ebook_scraper.py       # 年報/財報/三書表
     │   ├── briefing_scraper.py    # 法說會簡報
     │   ├── esg_scraper.py         # ESG 永續報告書
+    │   ├── prospectus_scraper.py  # 公開說明書
     │   └── mopsov_scraper.py      # Selenium 備援
     └── utils/
         └── downloader.py          # 主流程控制

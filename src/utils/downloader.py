@@ -5,6 +5,7 @@ import urllib3
 from src.scrapers.ebook_scraper import download_mops_pdf
 from src.scrapers.mopsov_scraper import download_briefing_selenium, download_financials_selenium, download_affiliated_selenium
 from src.scrapers.esg_scraper import download_esg_report
+from src.scrapers.prospectus_scraper import download_prospectus
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -269,6 +270,18 @@ class MOPSDownloader:
         except Exception as e:
             print(f"Warning: 永續報告書下載失敗。({e})")
             print(f"您可以手動至 https://esggenplus.twse.com.tw/inquiry/report 搜尋 {self.ticker} 下載。")
+
+        # 6. 抓取最近一期公開說明書
+        print(f"\n==> 正在搜尋 {self.ticker} 最近一期公開說明書...")
+        try:
+            prospectus_paths = download_prospectus(self.ticker, self.save_dir, max_reports=1)
+            if prospectus_paths:
+                print(f"成功下載 {len(prospectus_paths)} 份公開說明書。")
+            else:
+                print(f"Warning: 無法自動下載 {self.ticker} 的公開說明書。可手動至 https://mopsov.twse.com.tw/mops/web/t57sb01_q3 下載。")
+        except Exception as e:
+            print(f"Warning: 公開說明書下載失敗。({e})")
+            print(f"您可以手動至 https://mopsov.twse.com.tw/mops/web/t57sb01_q3 搜尋 {self.ticker} 下載。")
 
         print("\n=== 打包完成 ===")
         print(f"所有報告已存放在 {os.path.abspath(self.save_dir)} 資料夾中。")

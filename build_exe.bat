@@ -47,6 +47,7 @@ python -m PyInstaller --noconfirm --onefile --windowed ^
     --hidden-import "src.scrapers.ebook_scraper" ^
     --hidden-import "src.scrapers.briefing_scraper" ^
     --hidden-import "src.scrapers.esg_scraper" ^
+    --hidden-import "src.scrapers.prospectus_scraper" ^
     --hidden-import "src.scrapers.mopsov_scraper" ^
     --hidden-import "src.utils" ^
     --hidden-import "src.utils.downloader" ^
